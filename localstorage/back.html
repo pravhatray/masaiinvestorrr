@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+   
+<form id="form">
+    <input id="pic" type="text" placeholder="paste img">
+    <input id="name" type="text" placeholder="enter name">
+    <input  id="role" type="text" placeholder="enter post">
+    <input id="logo" type="text" placeholder="paste logo">
+    <input type="submit" value="submit">
+</form>
+
+</body>
+</html>
+
+<script>
+    document.querySelector("#form")
+    .addEventListener("submit" , investors);
+    var investor=JSON.parse(localStorage.getItem("investorData"))||[];
+    // if(JSON.parse(localStorage.getItem("investorData"))==null)
+    // {
+    //     investor=[]
+    // }
+    // else{
+    //     investor=JSON.parse(localStorage.getItem("investorData"))
+    // }
+
+    function investors(){
+event.preventDefault();
+var objinvest={
+    dpic:form.pic.value,
+    dname:form.name.value,
+    drole:form.role.value,
+    dlogo:form.logo.value
+
+}
+investor.push(objinvest)
+console.log(objinvest)
+localStorage.setItem("investorData" ,JSON.stringify(investor) )
+    }
+</script>
